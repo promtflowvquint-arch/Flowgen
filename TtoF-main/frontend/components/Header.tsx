@@ -33,15 +33,14 @@ export default function Header() {
         <div className="flex justify-between items-center h-16">
 
           {/* LEFT SECTION: Logo Only */}
-          <div className="flex items-center">
-            <Link href="/dashboard" className="flex items-center space-x-3 cursor-pointer group">
+          <div className="flex items-center min-w-0">
+            <Link href="/dashboard" className="flex items-center space-x-2 md:space-x-3 cursor-pointer group truncate">
               <img
                 src="/logo.png"
                 alt="Logo"
-                style={{ width: '60px', height: '60px' }}
-                className="rounded-lg object-contain transition-transform group-hover:scale-105"
+                className="w-10 h-10 md:w-[60px] md:h-[60px] rounded-lg object-contain transition-transform group-hover:scale-105 shrink-0"
               />
-              <span className="text-xl font-bold tracking-tighter text-white uppercase">
+              <span className="text-base md:text-xl font-bold tracking-tighter text-white uppercase truncate">
                 FlowGen
               </span>
             </Link>

@@ -18,7 +18,7 @@
 
 //   return (
 //     <div className="min-h-screen bg-[#05010d] font-sans text-white selection:bg-purple-500/30">
-      
+
 //       {/* Cinematic Background */}
 //       <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
 //         <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-purple-600/20 rounded-full blur-[120px] animate-pulse" />
@@ -38,7 +38,7 @@
 //             />
 //             <span className="text-lg font-bold tracking-tighter uppercase">FlowGen</span>
 //           </div>
-          
+
 //           <div className="flex items-center gap-4">
 //             <Link href="/login" className="px-5 py-2 border border-white/10 rounded-xl text-[10px] font-bold uppercase tracking-widest hover:bg-white/5 transition-all">
 //               Login
@@ -57,18 +57,18 @@
 //             <Activity className="w-3 h-3 text-purple-500" />
 //             <span>Neural Architecture v2.0</span>
 //           </div>
-          
+
 //           <h1 className="text-7xl md:text-[120px] font-extrabold tracking-tighter leading-[0.8] mb-10">
 //             Design at light <br/>
 //             <span className="text-transparent bg-clip-text bg-gradient-to-b from-white to-white/20">
 //               speed.
 //             </span>
 //           </h1>
-          
+
 //           <p className="text-lg md:text-xl text-purple-100/40 leading-relaxed max-w-2xl mx-auto mb-16">
 //             Stop drawing boxes manually. Describe your system logic in plain language and let our AI compile professional-grade blueprints in seconds.
 //           </p>
-          
+
 //           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
 //             <Link href="/signup" className="h-16 px-12 rounded-2xl bg-white text-black font-black text-lg shadow-[0_0_40px_rgba(255,255,255,0.2)] hover:scale-105 transition-all flex items-center gap-3">
 //               Start Building
@@ -88,7 +88,7 @@
 //               </div>
 //               <div className="text-[9px] font-bold tracking-[0.3em] text-white/20 uppercase">Workspace / Untitled_System</div>
 //             </div>
-            
+
 //             <div className="grid md:grid-cols-2 min-h-[500px]">
 //               <div className="p-10 border-r border-white/5 space-y-6">
 //                 <div className="flex items-center gap-3 text-purple-400">
@@ -163,7 +163,7 @@
 'use client';
 
 import Link from 'next/link';
-import { 
+import {
   ArrowRight, Play, Layers, MousePointer2, Activity, Download, Terminal
 } from 'lucide-react';
 
@@ -179,7 +179,7 @@ export default function HomePage() {
 
   return (
     <div className="min-h-screen bg-[#05010d] font-sans text-white selection:bg-purple-500/30">
-      
+
       {/* Cinematic Background */}
       <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
         <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-purple-600/20 rounded-full blur-[120px] animate-pulse" />
@@ -188,23 +188,22 @@ export default function HomePage() {
       </div>
 
       {/* Navigation */}
-      <nav className="fixed top-6 left-1/2 -translate-x-1/2 w-[90%] max-w-5xl z-50">
-        <div className="bg-white/[0.03] backdrop-blur-xl border border-white/10 rounded-2xl px-6 py-3 flex justify-between items-center shadow-2xl">
-          <div className="flex items-center gap-1">
+      <nav className="fixed top-6 left-1/2 -translate-x-1/2 w-[95%] max-w-5xl z-50">
+        <div className="bg-white/[0.03] backdrop-blur-xl border border-white/10 rounded-2xl px-4 md:px-6 py-2 md:py-3 flex justify-between items-center shadow-2xl">
+          <div className="flex items-center gap-1 min-w-0">
             <img
-              src="/logo.png" 
+              src="/logo.png"
               alt="Logo"
-              style={{ width: '60px', height: '60px' }}
-              className="rounded-lg object-contain"
+              className="w-10 h-10 md:w-[60px] md:h-[60px] rounded-lg object-contain shrink-0"
             />
-            <span className="text-lg font-bold tracking-tighter uppercase">FlowGen</span>
+            <span className="text-sm md:text-lg font-bold tracking-tighter uppercase truncate hidden xs:block">FlowGen</span>
           </div>
-          
-          <div className="flex items-center gap-4">
-            <Link href="/login" className="px-5 py-2 border border-white/10 rounded-xl text-[10px] font-bold uppercase tracking-widest hover:bg-white/5 transition-all">
+
+          <div className="flex items-center gap-2 md:gap-4 shrink-0">
+            <Link href="/login" className="px-3 md:px-5 py-2 border border-white/10 rounded-xl text-[9px] md:text-[10px] font-bold uppercase tracking-widest hover:bg-white/5 transition-all">
               Login
             </Link>
-            <Link href="/signup" className="px-5 py-2 bg-white text-[#05010d] text-[10px] font-bold uppercase tracking-widest rounded-xl hover:bg-purple-200 transition-all active:scale-95">
+            <Link href="/signup" className="px-3 md:px-5 py-2 bg-white text-[#05010d] text-[9px] md:text-[10px] font-bold uppercase tracking-widest rounded-xl hover:bg-purple-200 transition-all active:scale-95 whitespace-nowrap">
               Get Access
             </Link>
           </div>
@@ -218,18 +217,18 @@ export default function HomePage() {
             <Activity className="w-3 h-3 text-purple-500" />
             <span>Neural Architecture v2.0</span>
           </div>
-          
+
           <h1 className="text-7xl md:text-[120px] font-extrabold tracking-tighter leading-[0.8] mb-10">
-            Design at light <br/>
+            Design at light <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-b from-white to-white/20">
               speed.
             </span>
           </h1>
-          
+
           <p className="text-lg md:text-xl text-purple-100/40 leading-relaxed max-w-2xl mx-auto mb-16">
             Stop drawing boxes manually. Describe your system logic in plain language and let our AI compile professional-grade blueprints in seconds.
           </p>
-          
+
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
             <Link href="/signup" className="h-16 px-12 rounded-2xl bg-white text-black font-black text-lg shadow-[0_0_40px_rgba(255,255,255,0.2)] hover:scale-105 transition-all flex items-center gap-3">
               Start Building
@@ -242,7 +241,7 @@ export default function HomePage() {
         <div className="mt-32 max-w-6xl mx-auto px-6 relative group">
           <div className="absolute -inset-1 bg-gradient-to-r from-purple-600/30 to-indigo-600/30 rounded-[3rem] blur-3xl opacity-20"></div>
           <div className="relative bg-[#0c051a] border border-white/10 rounded-[3rem] overflow-hidden shadow-2xl">
-            
+
             {/* Window Header */}
             <div className="h-12 bg-white/[0.02] border-b border-white/5 flex items-center px-8 justify-between">
               <div className="flex gap-2">
@@ -252,7 +251,7 @@ export default function HomePage() {
               </div>
               <div className="text-[9px] font-bold tracking-[0.3em] text-white/20 uppercase">Preview / Interface_Demo</div>
             </div>
-            
+
             <div className="grid md:grid-cols-2">
               {/* Left Side: Input Terminal */}
               <div className="p-10 border-r border-white/5 space-y-6 bg-black/20 flex flex-col justify-center min-h-[400px]">
@@ -269,17 +268,17 @@ export default function HomePage() {
               {/* Right Side: Video Player */}
               <div className="relative p-6 md:p-10 bg-[radial-gradient(#ffffff05_1px,transparent_1px)] [background-size:20px_20px] flex items-center justify-center">
                 <div className="relative w-full rounded-2xl overflow-hidden border border-white/10 bg-black/40 shadow-2xl flex items-center justify-center">
-                  <video 
-                    autoPlay 
-                    loop 
-                    muted 
+                  <video
+                    autoPlay
+                    loop
+                    muted
                     playsInline
                     className="w-full h-auto object-contain block" // Critical change for desktop view visibility
                   >
                     <source src="/demo-video.mp4" type="video/mp4" />
                     Your browser does not support the video tag.
                   </video>
-                  
+
                   {/* Subtle Video Overlay */}
                   <div className="absolute inset-0 pointer-events-none ring-1 ring-inset ring-white/10 rounded-2xl"></div>
                 </div>
@@ -327,9 +326,9 @@ export default function HomePage() {
           Once generated, your diagrams are available for high-resolution download. Perfect for technical documentation, pitch decks, or hand-offs.
         </p>
         <div className="flex justify-center gap-4">
-           {['SVG', 'PNG', 'PDF'].map(ext => (
-             <div key={ext} className="px-6 py-3 bg-white/5 border border-white/10 rounded-xl text-[10px] font-bold tracking-[0.2em]">{ext}</div>
-           ))}
+          {['SVG', 'PNG', 'PDF'].map(ext => (
+            <div key={ext} className="px-6 py-3 bg-white/5 border border-white/10 rounded-xl text-[10px] font-bold tracking-[0.2em]">{ext}</div>
+          ))}
         </div>
       </section>
 
