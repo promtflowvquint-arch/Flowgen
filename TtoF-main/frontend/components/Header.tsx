@@ -36,7 +36,7 @@ export default function Header() {
           <div className="flex items-center min-w-0">
             <Link href="/dashboard" className="flex items-center space-x-2 md:space-x-3 cursor-pointer group truncate">
               <img
-                src="/logo.png"
+                src="/logo_v1.png"
                 alt="Logo"
                 className="w-10 h-10 md:w-[60px] md:h-[60px] rounded-lg object-contain transition-transform group-hover:scale-105 shrink-0"
               />
