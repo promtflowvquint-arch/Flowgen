@@ -4,7 +4,7 @@
 import { useState, FormEvent } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
-import { User, Mail, Lock, ArrowRight, Eye, EyeOff, Zap, Layout, Share2, Shield, Sparkles } from 'lucide-react';
+import { User, Mail, Lock, ArrowRight, Eye, EyeOff, Zap, Layout, Share2, Shield, Sparkles, Download, Layers } from 'lucide-react';
 
 export default function SignupPage() {
   const router = useRouter();
@@ -65,7 +65,7 @@ export default function SignupPage() {
         <div className="relative z-10">
           <Link href="/" className="flex items-center gap-3 group w-fit">
             <img
-              src="/logo.png"
+              src="/logo_v1.png"
               alt="Logo"
               className="w-14 h-14 object-contain"
             />
@@ -80,9 +80,9 @@ export default function SignupPage() {
 
           <div className="mt-12 space-y-6 max-w-sm">
             {[
-              { icon: Layout, title: 'Generative UI', desc: 'AI that builds your structure.' },
-              { icon: Share2, title: 'Real-time Sync', desc: 'Collaborate with your team.' },
-              { icon: Shield, title: 'Secure by Design', desc: 'Enterprise-grade protection.' }
+              { icon: Sparkles, title: 'Generative AI', desc: 'Stop drawing boxes. Start describing logic.' },
+              { icon: Layout, title: 'Auto-Spatial Logic', desc: 'No more misaligned arrows or messy layouts.' },
+              { icon: Download, title: 'One-Click Delivery', desc: 'Instant downloads ready for your technical docs.' }
             ].map((item, i) => (
               <div key={i} className="flex gap-4 group">
                 <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:bg-purple-500/10 transition-colors">

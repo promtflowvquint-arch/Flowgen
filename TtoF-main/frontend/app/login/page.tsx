@@ -44,7 +44,7 @@ export default function LoginPage() {
         <div className="relative z-10">
           <Link href="/" className="flex items-center gap-3 group">
             <img
-              src="/logo.png"
+              src="/logo_v1.png"
               alt="Logo"
               className="w-14 h-14 object-contain"
             />

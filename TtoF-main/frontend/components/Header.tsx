@@ -80,12 +80,14 @@ export default function Header() {
                 onClick={() => setShowMenu(!showMenu)}
                 className="flex items-center gap-3 p-1 transition-all group"
               >
-                <div className="w-10 h-10 bg-white/[0.05] border border-white/10 text-white rounded-full flex items-center justify-center text-sm font-black transition-all group-hover:border-purple-500/50 group-hover:bg-purple-500/10">
+                <div className="w-9 h-9 bg-white/[0.05] border border-white/10 text-white rounded-full flex items-center justify-center text-xs font-black transition-all group-hover:border-purple-500/50 group-hover:bg-purple-500/10">
                   {userEmail ? userEmail[0].toUpperCase() : 'U'}
                 </div>
-                <div className="text-left">
-                  <p className="text-[10px] font-black text-purple-400 uppercase tracking-widest -mb-1">Member</p>
-                  <ChevronDown className={`w-3 h-3 text-white/20 transition-transform duration-300 ${showMenu ? 'rotate-180' : ''}`} />
+                <div className="relative flex flex-col justify-center h-9">
+                  <p className="text-[11px] font-black text-purple-400 uppercase tracking-widest leading-none">Member</p>
+                  <div className="absolute -bottom-1.5 left-1/2 -translate-x-1/2">
+                    <ChevronDown className={`w-3.5 h-3.5 text-purple-400/50 transition-transform duration-300 ${showMenu ? 'rotate-180' : ''}`} />
+                  </div>
                 </div>
               </button>
 

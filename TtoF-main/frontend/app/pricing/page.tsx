@@ -33,7 +33,6 @@ export default function PricingPage() {
                 'All 8+ Diagram Types',
                 'Unlimited AI Generations',
                 'High-Res Export (SVG/PDF)',
-                'Priority Gemini 2.5 Access',
                 'Save & Load Unlimited Projects',
                 'Advanced Custom Themes'
             ],
@@ -52,7 +51,7 @@ export default function PricingPage() {
             {/* Minimal Logo Branding (No Navbar) */}
             <div className="pt-12 flex justify-center">
                 <Link href="/" className="flex items-center space-x-3 group cursor-pointer relative z-20">
-                    <img src="/logo.png" alt="Logo" className="w-12 h-12 rounded-lg object-contain transition-transform group-hover:scale-105" />
+                    <img src="/logo_v1.png" alt="Logo" className="w-12 h-12 rounded-lg object-contain transition-transform group-hover:scale-105" />
                     <span className="text-xl font-bold tracking-tighter uppercase">FlowGen</span>
                 </Link>
             </div>

@@ -235,14 +235,58 @@ export default function MyProjects() {
                       </div>
                     )}
 
-                    <div className={viewMode === 'grid' ? 'space-y-6 flex-1' : 'flex items-center gap-8 flex-1'}>
-                      <div className="flex items-center justify-between">
-                        <span className="px-2 py-0.5 bg-white/5 text-slate-500 text-[9px] font-bold rounded-lg uppercase tracking-wider border border-white/5 group-hover:bg-purple-500/10 group-hover:text-purple-400 group-hover:border-purple-500/20 transition-colors">
-                          {categories.find(cat => cat.id === project.type)?.name || project.type}
-                        </span>
-                        {viewMode === 'list' && (
-                          <div className="flex items-center gap-4">
-                            <div className="flex items-center gap-2 text-slate-600 text-[10px] font-bold uppercase tracking-widest whitespace-nowrap">
+                    <div className={viewMode === 'grid' ? 'space-y-6 flex-1' : 'flex flex-1 items-center justify-between gap-4 min-w-0'}>
+                      {viewMode === 'grid' ? (
+                        <>
+                          <div className="flex items-center justify-between">
+                            <span className="px-2 py-0.5 bg-white/5 text-slate-500 text-[9px] font-bold rounded-lg uppercase tracking-wider border border-white/5 group-hover:bg-purple-500/10 group-hover:text-purple-400 group-hover:border-purple-500/20 transition-colors">
+                              {categories.find(cat => cat.id === project.type)?.name || project.type}
+                            </span>
+                          </div>
+
+                          <div className="flex-1 min-w-0">
+                            <h3 className="text-xl font-bold text-white group-hover:text-purple-400 transition-colors truncate mb-2">
+                              {project.title}
+                            </h3>
+                            <div className="flex items-center gap-2 text-slate-600 text-[10px] font-bold uppercase tracking-widest">
+                              <Clock size={12} />
+                              {new Date(project.createdAt).toLocaleDateString('en-GB').replace(/\//g, '.')}
+                            </div>
+                          </div>
+
+                          <div className="mt-auto pt-4 flex items-center justify-end">
+                            <button
+                              onClick={(e) => deleteProject(project.id, e)}
+                              className="p-2 text-slate-700 hover:text-red-400 hover:bg-white/5 rounded-xl transition-all opacity-0 group-hover:opacity-100"
+                            >
+                              <Trash2 size={16} />
+                            </button>
+                          </div>
+                        </>
+                      ) : (
+                        /* List View Simplified & Fixed */
+                        <>
+                          <div className="flex-1 min-w-0 flex flex-col justify-center">
+                            <h3 className="text-base sm:text-lg font-bold text-white group-hover:text-purple-400 transition-colors truncate">
+                              {project.title}
+                            </h3>
+                            {/* Mobile-only compact metadata row */}
+                            <div className="flex sm:hidden items-center gap-2 mt-0.5 opacity-40">
+                              <span className="text-[8px] font-black uppercase tracking-tighter">
+                                {categories.find(cat => cat.id === project.type)?.name || project.type}
+                              </span>
+                              <span className="w-0.5 h-0.5 rounded-full bg-white/30" />
+                              <span className="text-[8px] font-bold tracking-tight">
+                                {new Date(project.createdAt).toLocaleDateString('en-GB').replace(/\//g, '.')}
+                              </span>
+                            </div>
+                          </div>
+
+                          <div className="flex items-center gap-3 sm:gap-8 shrink-0">
+                            <span className="hidden sm:block px-2 py-0.5 bg-white/5 text-slate-500 text-[9px] font-bold rounded-lg uppercase tracking-wider border border-white/5">
+                              {categories.find(cat => cat.id === project.type)?.name || project.type}
+                            </span>
+                            <div className="hidden sm:flex items-center gap-2 text-slate-600 text-[10px] font-bold uppercase tracking-widest whitespace-nowrap">
                               <Clock size={12} />
                               {new Date(project.createdAt).toLocaleDateString('en-GB').replace(/\//g, '.')}
                             </div>
@@ -253,32 +297,9 @@ export default function MyProjects() {
                               <Trash2 size={16} />
                             </button>
                           </div>
-                        )}
-                      </div>
-
-                      <div className="flex-1 min-w-0">
-                        <h3 className="text-xl font-bold text-white group-hover:text-purple-400 transition-colors truncate mb-2">
-                          {project.title}
-                        </h3>
-                        {viewMode === 'grid' && (
-                          <div className="flex items-center gap-2 text-slate-600 text-[10px] font-bold uppercase tracking-widest">
-                            <Clock size={12} />
-                            {new Date(project.createdAt).toLocaleDateString('en-GB').replace(/\//g, '.')}
-                          </div>
-                        )}
-                      </div>
+                        </>
+                      )}
                     </div>
-
-                    {viewMode === 'grid' && (
-                      <div className="mt-auto pt-4 flex items-center justify-end">
-                        <button
-                          onClick={(e) => deleteProject(project.id, e)}
-                          className="p-2 text-slate-700 hover:text-red-400 hover:bg-white/5 rounded-xl transition-all opacity-0 group-hover:opacity-100"
-                        >
-                          <Trash2 size={16} />
-                        </button>
-                      </div>
-                    )}
                   </Link>
                 ))}
               </div>

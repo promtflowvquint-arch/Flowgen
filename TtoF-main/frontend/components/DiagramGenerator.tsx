@@ -127,7 +127,7 @@ export default function DiagramGenerator() {
   }, [projectId]);
 
   useEffect(() => {
-    if (mermaidCode && diagramRef.current) {
+    if (diagramRef.current) {
       renderDiagram(mermaidCode);
     }
   }, [mermaidCode, zoom]);
@@ -142,8 +142,9 @@ export default function DiagramGenerator() {
   };
 
   const renderDiagram = async (codeToRender: string) => {
-    if (!diagramRef.current || !codeToRender) return;
+    if (!diagramRef.current) return;
     diagramRef.current.innerHTML = '';
+    if (!codeToRender) return;
     try {
       let cleanedCode = codeToRender.replace(/(^|\s)\/\/.*$/gm, '');
       cleanedCode = cleanedCode.replace(/\/\*[\s\S]*?\*\//g, '');
@@ -467,6 +468,13 @@ export default function DiagramGenerator() {
             >
               <Save size={16} />
             </button>
+            <button
+              onClick={clearAll}
+              className="p-2.5 hover:bg-red-500/10 rounded-xl text-slate-500 hover:text-red-400 transition-all"
+              title="Clear Canvas"
+            >
+              <Trash2 size={16} />
+            </button>
           </div>
         )}
 
@@ -483,22 +491,27 @@ export default function DiagramGenerator() {
               <p className="text-sm font-bold text-red-400/80">{error}</p>
               <button onClick={generateDiagram} className="text-xs font-bold text-purple-500 hover:underline">Try Again</button>
             </div>
-          ) : mermaidCode ? (
-            <div
-              ref={diagramRef}
-              className="w-full h-full flex items-center justify-center transition-opacity duration-300 opacity-100"
-              style={{ filter: `drop-shadow(0 0 50px rgba(168, 85, 247, 0.1))` }}
-            ></div>
           ) : (
-            <div className="text-center space-y-6">
-              <div className="w-16 h-16 bg-white/5 rounded-3xl flex items-center justify-center mx-auto border border-white/5">
-                <FileText size={28} className="text-slate-700" />
-              </div>
-              <div className="space-y-2">
-                <p className="text-sm font-bold text-slate-500 uppercase tracking-widest">Canvas Empty</p>
-                <p className="text-xs text-slate-600 max-w-[200px] leading-relaxed">Enter a technical description in the sidebar to begin generating.</p>
-              </div>
-            </div>
+            <>
+              {/* Always show the ref div if we have mermaidCode, otherwise show empty state */}
+              <div
+                ref={diagramRef}
+                className={`w-full h-full flex items-center justify-center transition-opacity duration-300 ${mermaidCode ? 'opacity-100' : 'opacity-0 absolute pointer-events-none'}`}
+                style={{ filter: `drop-shadow(0 0 50px rgba(168, 85, 247, 0.1))` }}
+              ></div>
+
+              {!mermaidCode && (
+                <div className="text-center space-y-6">
+                  <div className="w-16 h-16 bg-white/5 rounded-3xl flex items-center justify-center mx-auto border border-white/5">
+                    <FileText size={28} className="text-slate-700" />
+                  </div>
+                  <div className="space-y-2">
+                    <p className="text-sm font-bold text-slate-500 uppercase tracking-widest">Canvas Empty</p>
+                    <p className="text-xs text-slate-600 max-w-[200px] leading-relaxed">Enter a technical description in the sidebar to begin generating.</p>
+                  </div>
+                </div>
+              )}
+            </>
           )}
         </div>
 
